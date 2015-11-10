@@ -6,7 +6,7 @@ elementType : 'module'
 standalone  : true
 
 title       : 'Tab'
-description : 'A tab is a hidden section of content activated by a menu'
+description : 'A tab is an item that has been defined as a "ui tabular menu" item that is capable of showing an associated section of hidden content when the tab is selected'
 type        : 'UI Module'
 
 themes      : ['Default']
@@ -80,9 +80,9 @@ themes      : ['Default']
 
     <div class="first example">
       <h4 class="ui header">Basic Tabs</h4>
-      <p>Tabs are connecting using paths specified in the <code>data-tab</code> attribute. Tab is then initialized in Javascript on the activating elements.</p>
+      <p>A tab is connected to its associated activating menu item by assigning the same value to the <code>data-tab</code> attribute in each of the tab/menu item pairs. A tab can be initialized to <code>active</code> in Javascript.</p>
       <div class="ui ignored info message">
-        To have a tab visible on page load, add the class <code>active</code> to both the initializing menu and the tab.
+        To have a tab be visible upon page load, add the class <code>active</code> to both the initializing menu and the tab.
       </div>
       <div class="ui top attached tabular menu">
         <a class="active item" data-tab="first">First</a>
@@ -107,7 +107,7 @@ themes      : ['Default']
 
     <div class="context example">
       <h4 class="ui header">Multiple Tab Groups</h4>
-      <p>There are a several of ways to include independent tab groups on the same page, even with history. One of the easiest ways is provide a specific parent context for each tab group.</p>
+      <p>There are several ways to include independent tab groups on the same page, even with history. One of the easiest ways is provide a specific parent context for each tab group.</p>
       <div class="ui ignored info message">
         If you are using tab contexts inside of tabs, you can also specify <code>childrenOnly: true</code> which will only look for tabs as the immediate children of the given context, or <code>context: 'parent'</code> a special keyword which avoids having to create unique selectors for each group.
       </div>
@@ -183,7 +183,7 @@ themes      : ['Default']
     <div class="paths example">
 
       <h4 class="ui header">Default Paths</h4>
-      <p>When you specify a path like <code>first/</code> after opening the tab it will look for the any child paths and open the first. In this example even if the path is <code>first/</code>, the tab corresponding with <code>first/a</code> will automatically also be open because it is the default child tab. This will work recursively for as many additional child tab groups as you include.</p>
+      <p>When you specify a path like <code>first/</code>, after opening the tab it will look for any child paths and open them first. In this example even if the path is <code>first/</code>, the tab corresponding with <code>first/a</code> will automatically also be open because it is the default child tab. This will work recursively for as many additional child tab groups as you include.</p>
       <div class="ui ignored info message">Each of these examples is initialized with a context to prevent contamination with other tab examples on this page. This is not necessary unless using multiple tab systems on a single page.</div>
       <div class="ignored code" data-type="javascript">
       $('.paths.example .menu .item')
@@ -235,7 +235,7 @@ themes      : ['Default']
 
     <div class="dynamic no example">
       <h4 class="header">Retreiving Remote Content</h4>
-      <p>Using <code>auto: true</code> will load the tab's path from your server with additional headers to specify an in-page request. When <a href="#settings"><code>cache: true</code></a> is set, re-opening a tab will be loaded from cache without a server request.</p>
+      <p>Using <code>auto: true</code> will load the tab's path from your server with additional headers to specify an in-page request. When <a href="#settings"><code>cache: true</code></a> is set, re-opening a tab will cause its content to be loaded from cache without a server request.</p>
       <div class="ui ignored warning message">
         API requests for the following example have been faked using <a href="/behaviors/api.html#using-custom-backends">mockResponse</a> API setting to avoid network overhead.
       </div>
@@ -280,7 +280,7 @@ themes      : ['Default']
 
     <div class="eval no example">
       <h4 class="header">Evaluating Scripts in HTML</h4>
-      <p>By default, <code>script</code> tags included in HTML will only be evaluated on first load. To change this behavior you can adjust the  <code>evaluateScripts</code> setting.</p>
+      <p>By default, <code>script</code> tags included in HTML will only be evaluated upon first load. To change this behavior you can adjust the  <code>evaluateScripts</code> setting.</p>
       <div class="code">
       $('.eval.example .menu .item')
         .tab({
